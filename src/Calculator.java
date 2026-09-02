@@ -159,6 +159,7 @@ public class Calculator implements ActionListener {
             }
             
         }else if(e.getSource()==eightButton) {
+
             if(isOperatorClicked){
                 displayLabel.setText("8");
                 isOperatorClicked=false;
@@ -167,23 +168,86 @@ public class Calculator implements ActionListener {
             }
             
         }else if(e.getSource()==nineButton) {
-            displayLabel.setText(displayLabel.getText()+"9");
+
+            if(isOperatorClicked){
+                displayLabel.setText("9");
+                isOperatorClicked=false;
+            }else{
+                 displayLabel.setText(displayLabel.getText()+"9");
+            }
+           
         }else if(e.getSource()==fourButton) {
-            displayLabel.setText(displayLabel.getText()+"4");
+
+           if(isOperatorClicked){
+                displayLabel.setText("4");
+                isOperatorClicked=false;
+            }else{
+                 displayLabel.setText(displayLabel.getText()+"4");
+            }
+
         }else if(e.getSource()==fiveButton) {
-            displayLabel.setText(displayLabel.getText()+"5");
+
+           if(isOperatorClicked){
+                displayLabel.setText("5");
+                isOperatorClicked=false;
+            }else{
+                 displayLabel.setText(displayLabel.getText()+"5");
+            }
+
         }else if(e.getSource()==sixButton) {
-            displayLabel.setText(displayLabel.getText()+"6");
+
+            if(isOperatorClicked){
+                displayLabel.setText("6");
+                isOperatorClicked=false;
+            }else{
+                 displayLabel.setText(displayLabel.getText()+"6");
+            }
+            
         }else if(e.getSource()==oneButton) {
-            displayLabel.setText(displayLabel.getText()+"1");
+
+            if(isOperatorClicked){
+                displayLabel.setText("1");
+                isOperatorClicked=false;
+            }else{
+                 displayLabel.setText(displayLabel.getText()+"1");
+            }
+
         }else if(e.getSource()==twoButton) {
-            displayLabel.setText(displayLabel.getText()+"2");
+
+            if(isOperatorClicked){
+                displayLabel.setText("2");
+                isOperatorClicked=false;
+            }else{
+                 displayLabel.setText(displayLabel.getText()+"2");
+            }
+
         }else if(e.getSource()==threeButton) {
-            displayLabel.setText(displayLabel.getText()+"3");
+
+            if(isOperatorClicked){
+                displayLabel.setText("3");
+                isOperatorClicked=false;
+            }else{
+                 displayLabel.setText(displayLabel.getText()+"3");
+            }
+
         }else if(e.getSource()==dotButton) {
-            displayLabel.setText(displayLabel.getText()+".");   
+
+            if(isOperatorClicked){
+                displayLabel.setText(".");
+                isOperatorClicked=false;
+            }else{
+                 displayLabel.setText(displayLabel.getText()+".");
+            }
+          
         }else if(e.getSource()==zeroButton) {
-            displayLabel.setText(displayLabel.getText()+"0");
+
+            if(isOperatorClicked){
+                displayLabel.setText("0");
+                isOperatorClicked=false;
+            }else{
+                 displayLabel.setText(displayLabel.getText()+"0");
+            }
+
         }else if(e.getSource()==equalButton){
             
             String newValue=displayLabel.getText();
@@ -197,7 +261,11 @@ public class Calculator implements ActionListener {
 
         }else if(e.getSource()==divButton) {
 
+            isOperatorClicked=true;
+            oldValue=displayLabel.getText();
+
         }else if(e.getSource()==plusButton){
+
             isOperatorClicked=true;
             oldValue=displayLabel.getText();
 
