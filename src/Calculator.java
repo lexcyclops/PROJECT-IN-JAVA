@@ -1,4 +1,5 @@
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
@@ -29,6 +30,7 @@ public class Calculator implements ActionListener {
         displayLabel.setOpaque(true);
         displayLabel.setHorizontalAlignment(SwingConstants.RIGHT);
         displayLabel.setForeground(Color.white);
+        displayLabel.setFont(new Font("Arial", Font.BOLD, 30));
         
         jf.add(displayLabel);
 
