@@ -11,6 +11,7 @@ public class Calculator implements ActionListener {
     boolean isOperatorClicked=false;
 
     String oldValue;
+    String operator;
 
      JFrame jf;
      JLabel displayLabel;
@@ -255,23 +256,49 @@ public class Calculator implements ActionListener {
             float oldValueF=Float.parseFloat(oldValue);
             float newValueF=Float.parseFloat(newValue);
 
-            float result=oldValueF+newValueF;
+            float result=0;
+
+            switch(operator){
+                case "+":
+                    result=oldValueF + newValueF;
+                    break;
+                case "-":
+                    result=oldValueF - newValueF;
+                    break;
+                case "/":
+                    result=oldValueF / newValueF;
+                    break;
+                case "x":
+                    result=oldValueF * newValueF;
+                    break;
+            }
 
             displayLabel.setText(result+"");
+
 
         }else if(e.getSource()==divButton) {
 
             isOperatorClicked=true;
             oldValue=displayLabel.getText();
+            operator="/";
 
         }else if(e.getSource()==plusButton){
 
             isOperatorClicked=true;
             oldValue=displayLabel.getText();
+            operator="+";
 
         }else if(e.getSource()==minusButton){
 
+            isOperatorClicked=true;
+            oldValue=displayLabel.getText();
+            operator="-";
+
         }else if(e.getSource()==mulButton){
+
+            isOperatorClicked=true;
+            oldValue=displayLabel.getText();
+            operator="x";
 
         }else if(e.getSource()==clearButton){
             displayLabel.setText("");
