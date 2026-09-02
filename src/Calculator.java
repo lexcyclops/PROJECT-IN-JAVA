@@ -17,7 +17,8 @@ public class Calculator implements ActionListener {
      JFrame jf;
      JLabel displayLabel;
      JButton sevenButton,eightButton,nineButton,fourButton,fiveButton,sixButton,oneButton,twoButton,threeButton,dotButton,zeroButton,equalButton,divButton,mulButton,minusButton,plusButton;
-     JButton clearButton;
+     JButton clearButton,deleteButton;
+
     public Calculator() {
         jf=new JFrame("Calculator");
         jf.setLayout(null);
@@ -118,6 +119,13 @@ public class Calculator implements ActionListener {
         divButton.setFont(divButton.getFont().deriveFont(30f));
         divButton.addActionListener(this);
         jf.add(divButton);
+
+        
+        deleteButton = new JButton("D");
+        deleteButton.setBounds(430,130,80,80);
+        deleteButton.setFont(deleteButton.getFont().deriveFont(30f));
+        deleteButton.addActionListener(this);
+        jf.add(deleteButton);
 
         mulButton = new JButton("x");
         mulButton.setBounds(330,230,80,80);
@@ -303,8 +311,22 @@ public class Calculator implements ActionListener {
             operator="x";
 
         }else if(e.getSource()==clearButton){
+
             displayLabel.setText("");
+
+        }else if(e.getSource()==deleteButton){
+
+            String currentText=displayLabel.getText();
+
+            if(currentText.length() > 0){
+                displayLabel.setText(currentText.substring(0,currentText.length() -1));
+            }
+
+
+
         }
-         
+
+
     }
+
 }
