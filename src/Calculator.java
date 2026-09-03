@@ -264,7 +264,7 @@ public class Calculator implements ActionListener {
             String newValue=displayLabel.getText();
 
             float oldValueF=Float.parseFloat(oldValue);
-            float newValueF=Float.parseFloat(newValue);
+            float newValueF=Float.parseFloat(newValue);//Convert the string into float variable to do the mathametic operations successfully without any error
 
             float result=0;
 
